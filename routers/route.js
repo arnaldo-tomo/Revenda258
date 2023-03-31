@@ -32,7 +32,7 @@ export default function MyStack() {
                         let iconName;
 
                         if (route.name === 'Home') {
-                            iconName = focused ? 'ios-home-outline' : 'ios-home-outline';
+                            iconName = focused ? 'ios-person' : 'ios-person';
                         } else if (route.name === 'Settings') {
                             iconName = focused ? 'ios-person' : 'ios-person-outline';
                         } else if (route.name === 'pesquisa') {
