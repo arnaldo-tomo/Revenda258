@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Index from '../src';
+import { Image } from 'native-base';
 
 function HomeScreen() {
     return (
@@ -75,7 +76,7 @@ export default function MyStack() {
 
 
             >
-                <Tab.Screen name="information" component={Index} options={{ headerShown: false }} />
+                <Tab.Screen name="information" component={HomeScreen} options={{ headerShown: false }} />
                 <Tab.Screen name="pesquisa" component={SettingsScreen} />
                 <Tab.Screen name="cart" component={SettingsScreen} />
                 <Tab.Screen name="Settings" component={SettingsScreen} />
