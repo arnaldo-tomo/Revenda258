@@ -31,9 +31,10 @@ export default function MyStack() {
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
 
-                        if (route.name === 'Home') {
-                            iconName = focused ? 'ios-person' : 'ios-person-outline';
-
+                        if (route.name === 'information') {
+                            iconName = focused
+                                ? 'ios-home'
+                                : 'ios-home-outline';
                         } else if (route.name === 'Settings') {
 
                             iconName = focused ? 'ios-person' : 'ios-person-outline';
@@ -59,11 +60,7 @@ export default function MyStack() {
 
 
             >
-                <Tab.Screen name="Home " component={Index} options={{
-                    headerShadowVisible: false, headerTitleStyle: {
-                    },
-
-                }} />
+                <Tab.Screen name="information" component={Index} />
                 <Tab.Screen name="pesquisa" component={SettingsScreen} />
                 <Tab.Screen name="cart" component={SettingsScreen} />
                 <Tab.Screen name="Settings" component={SettingsScreen} />
