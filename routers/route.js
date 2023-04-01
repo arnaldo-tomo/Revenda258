@@ -27,7 +27,9 @@ export default function MyStack() {
     return (
         <NavigationContainer>
             <Tab.Navigator
+                tabBarOptions={{ showLabel: false }}
                 screenOptions={({ route }) => ({
+
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
 
@@ -60,7 +62,7 @@ export default function MyStack() {
 
 
             >
-                <Tab.Screen name="information" component={Index} />
+                <Tab.Screen name="information" component={Index} options={{ headerTransparent: true, showLabel: false, }} />
                 <Tab.Screen name="pesquisa" component={SettingsScreen} />
                 <Tab.Screen name="cart" component={SettingsScreen} />
                 <Tab.Screen name="Settings" component={SettingsScreen} />
