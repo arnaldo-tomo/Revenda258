@@ -40,6 +40,14 @@ export default function Index() {
     }];
     return (
         <NativeBaseProvider>
+
+            <HStack justifyContent={'space-between'} pl={'2'} backgroundColor={'#fff'}>
+                <Image w={'100'} h={'50'} source={require('../assets/images/logofull.png')} alt="logo" />
+                <HStack justifyContent={'space-between'} justifyItems={'center'}>
+                    <Text fontFamily={'b'}>Hello</Text>
+                    <Text>Word!</Text>
+                </HStack>
+            </HStack>
             <View style={styles.container}>
                 <View style={{
                     paddingVertical: 12,
