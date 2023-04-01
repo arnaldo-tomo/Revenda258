@@ -41,11 +41,12 @@ export default function Index() {
     return (
         <NativeBaseProvider>
 
-            <HStack justifyContent={'space-between'} pl={'2'} backgroundColor={'#fff'}>
+            <HStack pt={'7'} justifyContent={'space-between'} justifyItems={'center'} pl={'2'} pr={'2'} backgroundColor={'#fff'}>
                 <Image w={'100'} h={'50'} source={require('../assets/images/logofull.png')} alt="logo" />
-                <HStack justifyContent={'space-between'} justifyItems={'center'}>
-                    <Text fontFamily={'b'}>Hello</Text>
-                    <Text>Word!</Text>
+                <HStack justifyContent={'space-between'} justifyItems={'center'} >
+                    <Ionicons name={'menu-outline'} size={30} color={'blue'} />
+                    <Ionicons name={'power-outline'} size={30} color={'blue'} />
+
                 </HStack>
             </HStack>
             <View style={styles.container}>
@@ -107,31 +108,72 @@ export default function Index() {
                 <Text color={'blue.400'}>Recente</Text>
                 <Text color={'blue.400'}>Pessoas</Text>
             </HStack>
-            <HStack justifyContent={'center'} justifyItems={'center'} bgColor={'white'} p={4}>
+            <HStack bgColor={'white'} p={4}>
                 <Heading fontWeight={'black'} >Vendas</Heading>
             </HStack>
 
             <ScrollView>
-                <Stack bgColor={'white'}>
+                <Stack pl={'2'} pr={'2'} bgColor={'white'} alignItems="center" justifyContent={'space-between'} >
                     <FlatList numColumns={2} showsHorizontalScrollIndicator={false} horizontal={false} data={data} renderItem={({ item }) =>
 
-                        <VStack  >
-                            <TouchableOpacity>
-                                <Box space="2" pl={"2"} pr={'4'} mr="4" bg="white" mb="4" _light={{ bg: "white" }}
-                                    _dark={{ bg: "white" }} size="189" borderColor="coolGray.200" shadow={2} rounded="md" _text={{ color: "black" }} safeArea>
+                        <TouchableOpacity>
 
-                                    <AspectRatio h="100%" w="100%" >
-                                        <Image h="100%" w="100%" source={{
-                                            uri: item.avatarUrl
-                                        }} alt="Justo" />
+                            <Box rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
+                                borderColor: "coolGray.600",
+                                backgroundColor: "gray.700"
+                            }} _web={{
+                                shadow: 2,
+                                borderWidth: 0
+                            }} _light={{
+                                backgroundColor: "gray.50"
+                            }}>
+                                <Box>
+                                    <AspectRatio w="40">
+                                        <Image source={{
+                                            uri: "https://www.holidify.com/images/cmsuploads/compressed/Bangalore_citycover_20190613234056.jpg"
+                                        }} alt="image" />
                                     </AspectRatio>
-                                    <Center>
-
-                                        <Text >{item.fullName}</Text>
+                                    <Center bg="violet.500" _dark={{
+                                        bg: "violet.400"
+                                    }} _text={{
+                                        color: "warmGray.50",
+                                        fontWeight: "700",
+                                        fontSize: "xs"
+                                    }} position="absolute" bottom="0" px="3" py="1.5">
+                                        PHOTOS
                                     </Center>
                                 </Box>
-                            </TouchableOpacity>
-                        </VStack>
+                                <Stack p="4" space={3}>
+                                    <Stack space={2}>
+                                        <Heading size="md" ml="-1">
+                                            The Garden City
+                                        </Heading>
+                                        <Text fontSize="xs" _light={{
+                                            color: "violet.500"
+                                        }} _dark={{
+                                            color: "violet.400"
+                                        }} fontWeight="500" ml="-0.5" mt="-1">
+                                            The Silicon Valley of India.
+                                        </Text>
+                                    </Stack>
+                                    {/* <Text fontWeight="400">
+                                                Bengaluru (also called Bangalore) is the center of India's high-tech
+                                                industry. The city is also known for its parks and nightlife.
+                                            </Text> */}
+                                    <HStack alignItems="center" space={4} justifyContent="space-between">
+                                        <HStack alignItems="center">
+                                            <Text color="coolGray.600" _dark={{
+                                                color: "warmGray.200"
+                                            }} fontWeight="400">
+                                                6 mins ago
+                                            </Text>
+                                        </HStack>
+                                    </HStack>
+                                </Stack>
+                            </Box>
+
+                        </TouchableOpacity>
+
                     } keyExtractor={item => item.id} />
                 </Stack>
             </ScrollView>
