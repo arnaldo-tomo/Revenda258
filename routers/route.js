@@ -27,7 +27,20 @@ export default function MyStack() {
     return (
         <NavigationContainer>
             <Tab.Navigator
-                tabBarOptions={{ showLabel: false }}
+                tabBarOptions={{
+                    activeTintColor: 'red',
+                    inactiveTintColor: 'black',
+                    showLabel: false,
+                    style: {
+                        borderWidth: 0.5,
+                        borderBottomWidth: 1,
+                        backgroundColor: 'red',
+                        borderTopLeftRadius: 20,
+                        borderTopRightRadius: 20,
+                        borderColor: 'grey',
+                        position: 'absolute'
+                    },
+                }}
                 screenOptions={({ route }) => ({
 
                     tabBarIcon: ({ focused, color, size }) => {
@@ -62,7 +75,7 @@ export default function MyStack() {
 
 
             >
-                <Tab.Screen name="information" component={Index} options={{ headerTransparent: true, showLabel: false, }} />
+                <Tab.Screen name="information" component={Index} options={{ headerShown: false }} />
                 <Tab.Screen name="pesquisa" component={SettingsScreen} />
                 <Tab.Screen name="cart" component={SettingsScreen} />
                 <Tab.Screen name="Settings" component={SettingsScreen} />
