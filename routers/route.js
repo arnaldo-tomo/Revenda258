@@ -32,11 +32,16 @@ export default function MyStack() {
                         let iconName;
 
                         if (route.name === 'Home') {
-                            iconName = focused ? 'ios-person' : 'ios-person';
-                        } else if (route.name === 'Settings') {
                             iconName = focused ? 'ios-person' : 'ios-person-outline';
+
+                        } else if (route.name === 'Settings') {
+
+                            iconName = focused ? 'ios-person' : 'ios-person-outline';
+
                         } else if (route.name === 'pesquisa') {
+
                             iconName = focused ? 'ios-search' : 'ios-search-outline';
+
                         } else if (route.name === 'cart') {
                             iconName = focused ? 'ios-cart' : 'ios-cart-outline';
 
@@ -47,7 +52,12 @@ export default function MyStack() {
                     },
                     tabBarActiveTintColor: 'blue',
                     tabBarInactiveTintColor: 'blue',
-                })}
+
+                })
+
+                }
+
+
             >
                 <Tab.Screen name="Home " component={Index} options={{
                     headerShadowVisible: false, headerTitleStyle: {
